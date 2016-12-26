@@ -1,3 +1,11 @@
+#  (2016-12-25)
+
+## Bug Fixes - proposed
+- **Widget:** addressed api drift 
+    nullable declarations required: Gtk.CellEditable? start_editing ( Gdk.Event? event
+    unroll incompatable type assignent: popover.pointing_to = pos;
+
+
 #  (2015-02-22)
 
 ## Bug Fixes

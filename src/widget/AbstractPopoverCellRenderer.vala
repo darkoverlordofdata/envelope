@@ -42,7 +42,7 @@ namespace Envelope.Widget {
             connect_real_signals ();
         }
 
-        public override unowned Gtk.CellEditable start_editing ( Gdk.Event event,
+        public override unowned Gtk.CellEditable? start_editing ( Gdk.Event? event,
                                         Gtk.Widget widget,
                                         string path,
                                         Gdk.Rectangle background_area,
@@ -56,7 +56,11 @@ namespace Envelope.Widget {
             Cairo.RectangleInt pos;
             bool set_top = determine_position (cell_area, out pos);
 
-            popover.pointing_to = pos;
+            // popover.pointing_to = pos;
+            popover.pointing_to.x = pos.x;
+            popover.pointing_to.y = pos.y;
+            popover.pointing_to.width = pos.width;
+            popover.pointing_to.height = pos.height;
             popover.relative_to = widget;
             popover.set_position (set_top ? Gtk.PositionType.TOP : Gtk.PositionType.BOTTOM);
 
